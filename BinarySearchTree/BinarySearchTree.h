@@ -21,5 +21,6 @@ typedef struct node {
 Tree *add(Tree*, int);
 void freeTree(Tree*);
 Tree *delete(Tree*, int);
+Tree *findMin(Tree*);
 
 #endif /* BinarySearchTree_h */

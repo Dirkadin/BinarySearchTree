@@ -8,19 +8,20 @@
 
 #include "BinarySearchTree.h"
 
+//Adds a new value to the tree
 Tree *add(Tree *node, int value) {
+	//If the node doesn't exist add allocate memory
 	if (node == NULL) {
 		node = (Tree*) malloc(sizeof (Tree));
-		if (node == NULL) {
-			return NULL;
-		}
 		
+		//Assign values to new node
 		node->left = NULL;
 		node->right = NULL;
 		node->value = value;
 		
 		return node;
 	}
+	//Add new node to correct side
 	if (node->value > value) {
 		node->left = add(node->left, value);
 	} else {
@@ -30,6 +31,7 @@ Tree *add(Tree *node, int value) {
 	return node;
 }
 
+//Frees all of the allocated memory for the tree
 void freeTree(Tree* node) {
 	if (node == NULL) {
 		return;
@@ -39,17 +41,33 @@ void freeTree(Tree* node) {
 	free(node);
 }
 
+//Deletes a node with a given value
 Tree* delete(Tree *node, int value) {
 	Tree *temp = NULL;
+	
+	//If node is null return null
 	if (node == NULL) {
 		return NULL;
 	}
 	
+	//If value is less than current node delete left
 	if (value < node->value) {
 		node->left = delete(node->left, value);
-	} else {
-		
+	} else if (value > node->value) { //If value is greater, delete right
+		node->right = delete(node->right, value);
+	} else if (node->left && node->right) {
+		temp = findMin(node->right);
 	}
 	
 	return temp;
+}
+
+Tree* findMin(Tree *node) {
+	if (node == NULL) {
+		return NULL;
+	}
+	if (node->left == NULL) {
+		return NULL;
+	}
+	return findMin(node->left);
 }
