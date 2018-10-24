@@ -7,9 +7,22 @@
 //
 
 #include <stdio.h>
+#include "BinarySearchTree.h"
 
 int main(int argc, const char * argv[]) {
-	// insert code here...
-	printf("Hello, World!\n");
+	
+	Tree* tree = NULL;
+	int i;
+	
+//	int myNums[] = {4, 7, 3, 1, 8};
+	int myNums[] = {4, 7};
+	for (i = 0; i < 2; i++) {
+		tree = add(tree, myNums[i]);
+	}
+	
+	printf("%d", tree->left && tree->right);
+
+	freeTree(tree);
+	
 	return 0;
 }
