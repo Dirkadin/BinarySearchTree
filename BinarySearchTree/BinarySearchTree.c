@@ -102,12 +102,14 @@ int findDepth(Tree *node) {
 		return 0;
 	}
 	
-	//FIXEME: Only counts down one side of the tree
-	if (node->left != NULL) {
-		return findDepth(node->left) + 1;
-	} else if (node->right != NULL) {
-		return findDepth(node->right) + 1;
+	//Recursively find dept for each child
+	int left = findDepth(node->left);
+	int right = findDepth(node->right);
+	
+	//Return added up depth
+	if (left > right) {
+		return left + 1;
 	} else {
-		return 0;
+		return right + 1;
 	}
 }

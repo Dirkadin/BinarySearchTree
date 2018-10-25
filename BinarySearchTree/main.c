@@ -21,11 +21,11 @@ int main(int argc, const char * argv[]) {
 	
 //	delete(tree, 1);
 	
-//	int min = findMin(tree)->value;
+	int min = findMin(tree)->value;
 	
 	int depth = findDepth(tree);
 	
-	printf("%d", depth);
+	printf("Depth: %d\nMin: %d\n", depth, min);
 	
 
 	freeTree(tree);
