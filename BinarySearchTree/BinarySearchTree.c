@@ -36,11 +36,16 @@ Tree* add(Tree *node, int value) {
 
 //Frees all of the allocated memory for the tree
 void freeTree(Tree* node) {
+	//Yer done
 	if (node == NULL) {
 		return;
 	}
+	
+	//Recursively free da tree
 	freeTree(node->left);
 	freeTree(node->right);
+	
+	//Free yoself
 	free(node);
 }
 
