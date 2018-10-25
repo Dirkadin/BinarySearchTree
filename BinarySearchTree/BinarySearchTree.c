@@ -94,3 +94,20 @@ Tree* findMin(Tree *node) {
 	//Recursion left until we find null
 	return findMin(node->left);
 }
+
+int findDepth(Tree *node) {
+	
+	//Don't incrememnt if node is NULL
+	if (node == NULL) {
+		return 0;
+	}
+	
+	//FIXEME: Only counts down one side of the tree
+	if (node->left != NULL) {
+		return findDepth(node->left) + 1;
+	} else if (node->right != NULL) {
+		return findDepth(node->right) + 1;
+	}
+	
+	return 0;
+}

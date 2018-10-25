@@ -14,16 +14,21 @@ int main(int argc, const char * argv[]) {
 	Tree* tree = NULL;
 	int i;
 	
-	int myNums[] = {2, 1, 3, 1, 1};
+	int myNums[] = {2, 4, 3, 4, 4};
 	for (i = 0; i < 5; i++) {
 		tree = add(tree, myNums[i]);
 	}
 	
 //	delete(tree, 1);
 	
-	printf("%d", tree->left && tree->right);
+//	int min = findMin(tree)->value;
+	
+	int depth = findDepth(tree);
+	
+	printf("%d", depth);
+	
 
-//	freeTree(tree);
+	freeTree(tree);
 	
 	return 0;
 }
