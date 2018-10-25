@@ -14,10 +14,14 @@ int main(int argc, const char * argv[]) {
 	Tree* tree = NULL;
 	int i;
 	
-	int myNums[] = {4, 7, 3, 1, 8};
-	for (i = 0; i < 5; i++) {
+	int myNums[] = {2, 1, 3, 5};
+	for (i = 0; i < 2; i++) {
 		tree = add(tree, myNums[i]);
 	}
+	
+//	delete(tree, 1);
+	
+	printf("%d", tree->left && tree->right);
 
 	freeTree(tree);
 	

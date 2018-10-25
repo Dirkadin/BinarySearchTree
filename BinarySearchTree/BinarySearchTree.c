@@ -52,22 +52,42 @@ Tree* delete(Tree *node, int value) {
 	
 	//If value is less than current node delete left
 	if (value < node->value) {
+		
 		node->left = delete(node->left, value);
+		
 	} else if (value > node->value) { //If value is greater, delete right
+		
 		node->right = delete(node->right, value);
-	} else if (node->left && node->right) {
-		temp = findMin(node->right);
+		
+	} else if (node->left && node->right) { //If both pointers are populated
+		
+		temp = findMin(node->right); //Find smallest node on the right
+		node->value = temp->value; //Move smallest node up
+		node->right = delete(node->right, node->value); //deleted right node
+		
+	} else if (node->left == NULL) { //Null checking
+		node = node->right;
+		
+	} else if (node->right == NULL) {
+		node = node->left;
 	}
 	
-	return temp;
+	free(temp); //Free that memory my dude
+	
+	return node;
 }
 
 Tree* findMin(Tree *node) {
+	//If node is null return the sent node
 	if (node == NULL) {
-		return NULL;
+		return node;
 	}
+	
+	//If left node is null return sent node
 	if (node->left == NULL) {
-		return NULL;
+		return node;
 	}
+	
+	//Recursion left until we find null
 	return findMin(node->left);
 }
