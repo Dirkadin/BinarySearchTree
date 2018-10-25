@@ -107,7 +107,7 @@ int findDepth(Tree *node) {
 		return findDepth(node->left) + 1;
 	} else if (node->right != NULL) {
 		return findDepth(node->right) + 1;
+	} else {
+		return 0;
 	}
-	
-	return 0;
 }
