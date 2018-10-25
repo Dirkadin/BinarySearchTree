@@ -18,9 +18,10 @@ typedef struct node {
 	struct node * right;
 } Tree;
 
-Tree *add(Tree*, int);
+Tree* add(Tree*, int);
 void freeTree(Tree*);
-Tree *delete(Tree*, int);
-Tree *findMin(Tree*);
+Tree* delete(Tree*, int);
+Tree* findMin(Tree*);
+int findDepth(Tree*);
 
 #endif /* BinarySearchTree_h */

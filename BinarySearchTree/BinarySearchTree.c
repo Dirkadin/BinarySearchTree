@@ -9,7 +9,7 @@
 #include "BinarySearchTree.h"
 
 //Adds a new value to the tree
-Tree *add(Tree *node, int value) {
+Tree* add(Tree *node, int value) {
 	//If the node doesn't exist add allocate memory
 	if (node == NULL) {
 		node = (Tree*) malloc(sizeof (Tree));
