@@ -13,6 +13,9 @@ Tree *add(Tree *node, int value) {
 	//If the node doesn't exist add allocate memory
 	if (node == NULL) {
 		node = (Tree*) malloc(sizeof (Tree));
+		if (node == NULL) { //Legacy: make sure malloc was able to allocate memeory
+			return NULL;
+		}
 		
 		//Assign values to new node
 		node->left = NULL;
@@ -59,7 +62,7 @@ Tree* delete(Tree *node, int value) {
 		
 		node->right = delete(node->right, value);
 		
-	} else if (node->left && node->right) { //If both pointers are populated
+	} else if (node->left && node->right) { //If both pointers are populated - even case
 		
 		temp = findMin(node->right); //Find smallest node on the right
 		node->value = temp->value; //Move smallest node up

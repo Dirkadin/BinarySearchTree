@@ -14,8 +14,8 @@ int main(int argc, const char * argv[]) {
 	Tree* tree = NULL;
 	int i;
 	
-	int myNums[] = {2, 1, 3, 5};
-	for (i = 0; i < 2; i++) {
+	int myNums[] = {2, 1, 3, 1, 1};
+	for (i = 0; i < 5; i++) {
 		tree = add(tree, myNums[i]);
 	}
 	
@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
 	
 	printf("%d", tree->left && tree->right);
 
-	freeTree(tree);
+//	freeTree(tree);
 	
 	return 0;
 }
