@@ -21,6 +21,10 @@ int main(int argc, const char * argv[]) {
 	
 //	delete(tree, 1);
 	
+	delete(tree, 4);
+	delete(tree, 4);
+	delete(tree, 4);
+	
 	int min = findMin(tree)->value;
 	
 	int depth = findDepth(tree);

@@ -10,7 +10,7 @@
 
 //Adds a new value to the tree
 Tree* add(Tree *node, int value) {
-	//If the node doesn't exist add allocate memory
+	//If the node doesn't exist add new node and allocate memory
 	if (node == NULL) {
 		node = (Tree*) malloc(sizeof (Tree));
 		if (node == NULL) { //Legacy: make sure malloc was able to allocate memeory
@@ -21,10 +21,15 @@ Tree* add(Tree *node, int value) {
 		node->left = NULL;
 		node->right = NULL;
 		node->value = value;
+		node->counter = 1;
 		
 		return node;
 	}
 	//Add new node to correct side
+	if (node->value == value) {
+		node->counter++;
+		return node;
+	}
 	if (node->value > value) {
 		node->left = add(node->left, value);
 	} else {
@@ -56,6 +61,14 @@ Tree* delete(Tree *node, int value) {
 	//If node is null return null
 	if (node == NULL) {
 		return NULL;
+	}
+	
+	//If the node value and delete value are the same, decrement counter
+	if (node->value == value) {
+		if (node->counter > 1) {
+			node->counter--;
+			return node;
+		}
 	}
 	
 	//If value is less than current node delete left

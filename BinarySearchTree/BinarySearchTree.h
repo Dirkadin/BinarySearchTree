@@ -14,6 +14,7 @@
 
 typedef struct node {
 	int value;
+	int counter;
 	struct node * left;
 	struct node * right;
 } Tree;
