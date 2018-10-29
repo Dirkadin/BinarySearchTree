@@ -98,6 +98,7 @@ Tree* delete(Tree *node, int value) {
 	return node;
 }
 
+//Finds the lowest value in the tree
 Tree* findMin(Tree *node) {
 	//If node is null return the sent node
 	if (node == NULL) {
@@ -113,6 +114,7 @@ Tree* findMin(Tree *node) {
 	return findMin(node->left);
 }
 
+//Finds the loweset level in the tree
 int findDepth(Tree *node) {
 	
 	//Don't incrememnt if node is NULL
