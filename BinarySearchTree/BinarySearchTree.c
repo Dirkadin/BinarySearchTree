@@ -141,3 +141,11 @@ void traversePreOrder(Tree* node) {
 		traversePreOrder(node->right);
 	}
 }
+
+void traversePostOrder(Tree* node) {
+	if (node != NULL) {
+		traversePostOrder(node->left);
+		traversePostOrder(node->right);
+		printf("%d X %d\n", node->value, node->counter);
+	}
+}

@@ -25,5 +25,6 @@ Tree* delete(Tree*, int);
 Tree* findMin(Tree*);
 int findDepth(Tree*);
 void traversePreOrder(Tree*);
+void traversePostOrder(Tree*);
 
 #endif /* BinarySearchTree_h */
