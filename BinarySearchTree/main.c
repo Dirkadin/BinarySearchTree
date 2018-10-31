@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
 		tree = add(tree, myNums[i]);
 	}
 	
-	traversePostOrder(tree);
+	traverseInOrder(tree);
 	
 	freeTree(tree);
 	

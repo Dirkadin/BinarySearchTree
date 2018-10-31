@@ -26,5 +26,6 @@ Tree* findMin(Tree*);
 int findDepth(Tree*);
 void traversePreOrder(Tree*);
 void traversePostOrder(Tree*);
+void traverseInOrder(Tree*);
 
 #endif /* BinarySearchTree_h */
