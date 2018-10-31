@@ -7,3 +7,12 @@
 //
 
 #include "Queue.h"
+
+Queue* createQueue() {
+	Queue* temp = (Queue*)malloc(sizeof(Queue));
+	
+	temp->front = NULL;
+	temp->rear = NULL;
+	
+	return temp;
+}
