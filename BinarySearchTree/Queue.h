@@ -10,6 +10,7 @@
 #define Queue_h
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct qNode {
 	int key;
@@ -20,5 +21,10 @@ typedef struct Queue {
 	qNode *front;
 	qNode *rear;
 } Queue;
+
+Queue* createQueue(void);
+void addToQueue(Queue*);
+void enQueue(Queue);
+void deQueue(Queue);
 
 #endif /* Queue_h */
