@@ -133,3 +133,11 @@ int findDepth(Tree *node) {
 		return right + 1;
 	}
 }
+
+void traversePreOrder(Tree* node) {
+	if (node != NULL) {
+		printf("%d X %d\n", node->value, node->counter);
+		traversePreOrder(node->left);
+		traversePreOrder(node->right);
+	}
+}
