@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43319004218A17FF005B7540 /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 43319003218A17FF005B7540 /* Queue.c */; };
 		43A2DE892180CFD500F1A385 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A2DE882180CFD500F1A385 /* main.c */; };
+		43A2DE912180D0B500F1A385 /* BinarySearchTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A2DE902180D0B500F1A385 /* BinarySearchTree.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43319002218A17FF005B7540 /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		43319003218A17FF005B7540 /* Queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
 		43A2DE852180CFD500F1A385 /* BinarySearchTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinarySearchTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A2DE882180CFD500F1A385 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		43A2DE8F2180D0B500F1A385 /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
+		43A2DE902180D0B500F1A385 /* BinarySearchTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BinarySearchTree.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				43A2DE882180CFD500F1A385 /* main.c */,
+				43A2DE8F2180D0B500F1A385 /* BinarySearchTree.h */,
+				43A2DE902180D0B500F1A385 /* BinarySearchTree.c */,
+				43319002218A17FF005B7540 /* Queue.h */,
+				43319003218A17FF005B7540 /* Queue.c */,
 			);
 			path = BinarySearchTree;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43319004218A17FF005B7540 /* Queue.c in Sources */,
+				43A2DE912180D0B500F1A385 /* BinarySearchTree.c in Sources */,
 				43A2DE892180CFD500F1A385 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

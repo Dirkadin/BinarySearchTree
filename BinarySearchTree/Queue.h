@@ -18,13 +18,13 @@ typedef struct qNode {
 }qNode;
 
 typedef struct Queue {
-	qNode *front;
-	qNode *rear;
+	qNode *head;
+	qNode *tail;
 } Queue;
 
 Queue* createQueue(void);
-void addToQueue(Queue*);
-void enQueue(Queue);
-void deQueue(Queue);
+qNode* createNode(int);
+void enQueue(Queue*,int);
+qNode* deQueue(Queue*);
 
 #endif /* Queue_h */
