@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+//#include "Queue.h"
 
 typedef struct node {
 	int value;
@@ -27,5 +28,9 @@ int findDepth(Tree*);
 void traversePreOrder(Tree*);
 void traversePostOrder(Tree*);
 void traverseInOrder(Tree*);
+void traverseLevelOrder(Tree*);
+Tree** createQueue(int*, int*);
+void enQueue(Tree**, int*, Tree*);
+Tree* deQueue(Tree**, int*);
 
 #endif /* BinarySearchTree_h */

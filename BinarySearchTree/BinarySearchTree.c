@@ -134,6 +134,20 @@ int findDepth(Tree *node) {
 	}
 }
 
+Tree** createQueue(int* head, int* tail) {
+	Tree** queue = (Tree**)malloc(sizeof(Tree*));
+	
+	*head = 0;
+	*tail = 0;
+	
+	return queue;
+}
+
+void enQueue(Tree **queue, int *tail, Tree *node) {
+	queue[*tail] = node;
+	(*tail)++;
+}
+
 void traversePreOrder(Tree* node) {
 	if (node != NULL) {
 		printf("%d X %d\n", node->value, node->counter);
@@ -156,4 +170,10 @@ void traverseInOrder(Tree* node) {
 		printf("%d X %d\n", node->value, node->counter);
 		traverseInOrder(node->right);
 	}
+}
+
+void traverseLevelOrder(Tree* root) {
+	
+	
+	
 }
