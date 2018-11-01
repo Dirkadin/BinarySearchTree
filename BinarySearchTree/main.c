@@ -8,7 +8,6 @@
 
 #include <stdio.h>
 #include "BinarySearchTree.h"
-#include "Queue.h"
 
 int main(int argc, const char * argv[]) {
 	
