@@ -25,10 +25,12 @@ void freeTree(Tree*);
 Tree* delete(Tree*, int);
 Tree* findMin(Tree*);
 int findDepth(Tree*);
+
 void traversePreOrder(Tree*);
 void traversePostOrder(Tree*);
 void traverseInOrder(Tree*);
 void traverseLevelOrder(Tree*);
+
 Tree** createQueue(int*, int*);
 void enQueue(Tree**, int*, Tree*);
 Tree* deQueue(Tree**, int*);
