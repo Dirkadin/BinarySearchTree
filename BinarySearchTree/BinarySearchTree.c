@@ -143,16 +143,6 @@ Tree** createQueue(int* head, int* tail) {
 	return queue;
 }
 
-void enQueue(Tree **queue, int *tail, Tree *node) {
-	queue[*tail] = node;
-	(*tail)++;
-}
-
-Tree* deQueue(Tree **queue, int *head) {
-	(*head)++;
-	return queue[*head - 1];
-}
-
 void traversePreOrder(Tree* node) {
 	if (node != NULL) {
 		printf("%d X %d\n", node->value, node->counter);
@@ -177,6 +167,16 @@ void traverseInOrder(Tree* node) {
 	}
 }
 
+void enQueue(Tree **queue, int *tail, Tree *node) {
+	queue[*tail] = node;
+	(*tail)++;
+}
+
+Tree* deQueue(Tree **queue, int *head) {
+	(*head)++;
+	return queue[*head - 1];
+}
+
 void traverseLevelOrder(Tree* root) {
 	
 	int head;
@@ -189,6 +189,10 @@ void traverseLevelOrder(Tree* root) {
 		
 		//Print current node
 		printf("%d\n", temp->value);
+		
+		if (head == tail && head != 0) {
+			break;
+		}
 		
 		//En-queue left child if present
 		if (temp->left) {
