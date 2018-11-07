@@ -42,5 +42,6 @@ Tree* deQueue(Tree**, int*);
 //Helper functions
 int height(Tree*);
 int max(int,int);
+int getBalance(Tree*);
 
 #endif /* BinarySearchTree_h */

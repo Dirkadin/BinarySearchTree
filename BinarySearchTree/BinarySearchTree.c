@@ -22,6 +22,7 @@ Tree* add(Tree *node, int value) {
 		node->right = NULL;
 		node->value = value;
 		node->counter = 1;
+		node->height = 1;
 		
 		return node;
 	}
@@ -30,10 +31,38 @@ Tree* add(Tree *node, int value) {
 		node->counter++;
 		return node;
 	}
+	
+	node->height = max(height(node->left), height(node->right)) + 1;
+	
 	if (node->value > value) {
 		node->left = add(node->left, value);
 	} else {
 		node->right = add(node->right, value);
+	}
+	
+	//Get balance of current node
+	int balance = getBalance(node);
+	
+	//Rotation cases based on balanceof node
+	//One rotation
+	//LL
+	if (balance > 1 && value < node->left->value) {
+		return rotateRight(node);
+	}
+	//RR
+	if (balance < -1 && value > node->right->value) {
+		return rotateLeft(node);
+	}
+	//Two rotation
+	//LR
+	if (balance > 1 && value > node->left->value) {
+		node->left = rotateLeft(node->left);
+		return rotateRight(node);
+	}
+	//RL
+	if (balance < -1 && value < node->right->value) {
+		node->right = rotateRight(node->right);
+		return rotateLeft(node);
 	}
 	
 	return node;
@@ -209,31 +238,31 @@ void traverseLevelOrder(Tree* root) {
 	}
 }
 
-Tree* rotateRight(Tree* node) {
-	Tree *newRoot = node->left;
-	Tree *temp = node->right;
+Tree* rotateRight(Tree* root) {
+	Tree *newRoot = root->left;
+	Tree *temp = newRoot->right;
 	
 	//Rotation
-	newRoot->right = node;
-	node->left = temp;
+	newRoot->right = root;
+	root->left = temp;
 	
 	//Updating the height
-	node->height = max(height(node->left), height(newRoot->right));
+	root->height = max(height(root->left), height(root->right));
 	newRoot->height = max(height(newRoot->left), height(newRoot->right));
 	
 	return newRoot;
 }
 
-Tree* rotateLeft(Tree* node) {
-	Tree *newRoot = node->right;
-	Tree *temp = node->left;
+Tree* rotateLeft(Tree* root) {
+	Tree *newRoot = root->right;
+	Tree *temp = newRoot->left;
 	
 	//Rotation
-	newRoot->right = node;
-	newRoot->left = temp;
+	newRoot->left = root;
+	root->right = temp;
 	
 	//Update height
-	node->height = max(height(node->left), height(newRoot->right));
+	root->height = max(height(root->left), height(root->right));
 	newRoot->height = max(height(newRoot->left), height(newRoot->right));
 	
 	return newRoot;
@@ -255,4 +284,9 @@ int max(int x, int y) {
 	} else {
 		return y;
 	}
+}
+
+//Returns the balance of the provided node
+int getBalance(Tree* node) {
+	return height(node->left) - height(node->right);
 }
