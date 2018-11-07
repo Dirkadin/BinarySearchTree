@@ -206,24 +206,6 @@ void traverseLevelOrder(Tree* root) {
 		
 		//Dequeue current node
 		temp = deQueue(queue, &head);
-		
-	}
-	
-}
-
-//Helper functions
-int height(Tree *node) {
-	if (node == NULL) {
-		return 0;
-	}
-	return node->height;
-}
-
-int max(int x, int y) {
-	if (x > y) {
-		return x;
-	} else {
-		return y;
 	}
 }
 
@@ -255,4 +237,22 @@ Tree* rotateLeft(Tree* node) {
 	newRoot->height = max(height(newRoot->left), height(newRoot->right));
 	
 	return newRoot;
+}
+
+///Helper functions
+//Returns the integer height of a node
+int height(Tree *node) {
+	if (node == NULL) {
+		return 0;
+	}
+	return node->height;
+}
+
+//Returns the larger of two Integers
+int max(int x, int y) {
+	if (x > y) {
+		return x;
+	} else {
+		return y;
+	}
 }

@@ -39,4 +39,8 @@ Tree** createQueue(int*, int*);
 void enQueue(Tree**, int*, Tree*);
 Tree* deQueue(Tree**, int*);
 
+//Helper functions
+int height(Tree*);
+int max(int,int);
+
 #endif /* BinarySearchTree_h */
