@@ -18,6 +18,7 @@ typedef struct node {
 	int counter;
 	struct node * left;
 	struct node * right;
+	int height;
 } Tree;
 
 Tree* add(Tree*, int);
@@ -30,6 +31,9 @@ void traversePreOrder(Tree*);
 void traversePostOrder(Tree*);
 void traverseInOrder(Tree*);
 void traverseLevelOrder(Tree*);
+
+Tree* rotateRight(Tree*);
+Tree* rotateLeft(Tree*);
 
 Tree** createQueue(int*, int*);
 void enQueue(Tree**, int*, Tree*);

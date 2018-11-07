@@ -210,3 +210,49 @@ void traverseLevelOrder(Tree* root) {
 	}
 	
 }
+
+//Helper functions
+int height(Tree *node) {
+	if (node == NULL) {
+		return 0;
+	}
+	return node->height;
+}
+
+int max(int x, int y) {
+	if (x > y) {
+		return x;
+	} else {
+		return y;
+	}
+}
+
+Tree* rotateRight(Tree* node) {
+	Tree *newRoot = node->left;
+	Tree *temp = node->right;
+	
+	//Rotation
+	newRoot->right = node;
+	node->left = temp;
+	
+	//Updating the height
+	node->height = max(height(node->left), height(newRoot->right));
+	newRoot->height = max(height(newRoot->left), height(newRoot->right));
+	
+	return newRoot;
+}
+
+Tree* rotateLeft(Tree* node) {
+	Tree *newRoot = node->right;
+	Tree *temp = node->left;
+	
+	//Rotation
+	newRoot->right = node;
+	newRoot->left = temp;
+	
+	//Update height
+	node->height = max(height(node->left), height(newRoot->right));
+	newRoot->height = max(height(newRoot->left), height(newRoot->right));
+	
+	return newRoot;
+}
